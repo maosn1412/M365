@@ -1,0 +1,48 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.30/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.30",
+    "version": "1.0.0",
+    "id": "${{TEAMS_APP_ID}}",
+    "developer": {
+        "name": "Mason",
+        "websiteUrl": "https://github.com/",
+        "privacyUrl": "https://github.com/",
+        "termsOfUseUrl": "https://github.com/"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "teams-tab-app${{APP_NAME_SUFFIX}}",
+        "full": "Teams Tab App - M365 Learning Demo"
+    },
+    "description": {
+        "short": "Personal tab app for learning Teams development",
+        "full": "A React + TypeScript personal tab application built with Microsoft 365 Agents Toolkit for learning Teams app development. Demonstrates tab embedding in Teams, Outlook, and M365."
+    },
+    "accentColor": "#FFFFFF",
+    "supportsChannelFeatures": "tier1",
+    "bots": [],
+    "composeExtensions": [],
+    "staticTabs": [
+        {
+            "entityId": "index0",
+            "name": "Home",
+            "contentUrl": "${{TAB_ENDPOINT}}/tabs/home",
+            "websiteUrl": "${{TAB_ENDPOINT}}/tabs/home",
+            "scopes": [
+                "personal",
+                "groupChat",
+                "team"
+            ]
+        }
+    ],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "validDomains": [
+        "${{TAB_DOMAIN}}"
+    ]
+}

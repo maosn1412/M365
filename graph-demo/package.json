@@ -1,0 +1,18 @@
+{
+  "name": "graph-demo",
+  "version": "1.0.0",
+  "description": "Microsoft Graph API 学习 demo —— 离线冒烟测试 + 真实调用脚本",
+  "type": "module",
+  "scripts": {
+    "smoke": "node offline-smoke-test.js",
+    "list-users": "node list-users.js",
+    "har2code": "node ../tools/har-to-code.js --out har-samples"
+  },
+  "keywords": ["microsoft-graph", "m365", "learning"],
+  "author": "Mason",
+  "license": "ISC",
+  "dependencies": {
+    "@azure/identity": "^4.14.0",
+    "@microsoft/microsoft-graph-client": "^3.0.7"
+  }
+}

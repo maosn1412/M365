@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "spfx-hello-client-side-solution",
+    "id": "b47c07a8-9831-4cfd-9a50-ce80a11124f9",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "Mason",
+      "websiteUrl": "https://github.com/",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": ""
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "SPFx HelloWorld web part for M365 learning"
+      },
+      "longDescription": {
+        "default": "SPFx 1.23.2 Minimal template HelloWorld web part, used for learning SPFx build pipeline (Heft, packaging, hosted workbench)."
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "spfx-hello Feature",
+        "description": "The feature that activates elements of the spfx-hello solution.",
+        "id": "cb13d8d2-36e4-4c34-9851-2437b875d6a1",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/spfx-hello.sppkg"
+  }
+}

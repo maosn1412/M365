@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.2.0",
+  "default_evaluators": {
+    "Relevance": {},
+    "Coherence": {}
+  },
+  "items": [
+    {
+      "prompt": "What can you help me with?",
+      "expected_response": "I can help with M365 development learning, including Microsoft Graph, SPFx, Teams apps, and Copilot extensions.",
+      "evaluators": {
+        "PartialMatch": { "case_sensitive": false }
+      },
+      "evaluators_mode": "extend"
+    }
+  ]
+}

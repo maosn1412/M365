@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>GraphDeviceCodeFlow</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Azure.Identity：封装 OAuth 2.0 设备码流，自动处理轮询、token 缓存、自动刷新 -->
+    <PackageReference Include="Azure.Identity" Version="1.14.0" />
+    
+    <!-- Microsoft.Graph：强类型 SDK，把 REST 调用封装成 graphClient.Me.GetAsync() 这种形式 -->
+    <PackageReference Include="Microsoft.Graph" Version="5.70.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

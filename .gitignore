@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+lib/
+lib-commonjs/
+lib-esm/
+lib-dts/
+temp/
+release/
+jest-output/
+.heft/
+*.sppkg
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+npm-debug.log*
+
+# Env
+.env
+.env.local
+
+# Coverage
+coverage/
