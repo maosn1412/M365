@@ -184,3 +184,14 @@
 **变更内容**：
 - `docs/02-Teams应用与Copilot扩展.md`：新增第 6~10 章，包含两个 demo 项目索引、my-first-agent 结构详解（§7）、teams-tab-app 结构详解（§8）、两者架构对比（§9）、官方资源（§10）
 - `docs/04-开发环境搭建手册.md`：新增第 5a 节「Teams Tab 应用本地测试记录」，含生成/构建/校验全流程表格、技术栈说明、与 my-first-agent 对比表；待办新增 2 条（F5 调试 + Azure 远程部署）
+
+### 2026-11-05 · SPFx 文档补充 demo 项目文件结构详解
+
+**变更内容**：
+- `docs/03-SPFx-SharePoint开发.md`：新增第 8 章「Demo 项目文件结构详解（spfx-hello）」，原第 8~9 章顺延为 9~10
+  - §8.1 项目根目录树（标注源码/构建产物/配置文件）
+  - §8.2 config/ 目录 8 个配置文件的逐一说明（config.json、package-solution.json、serve.json 等）
+  - §8.3 src/webparts/helloWorld/ 目录（HelloWorldWebPart.ts 关键方法解释、manifest.json 字段说明）
+  - §8.4 teams/ 目录（图标命名规则、尺寸要求、打包行为）
+  - §8.5 package.json 脚本命令对照表（npm run start/build/clean/eject-webpack）
+  - §8.6 构建产物目录关系图（src → lib → dist → .sppkg 的流转过程）
