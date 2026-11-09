@@ -1,5 +1,11 @@
 # 02 · Teams 应用与 Copilot 扩展专题
 
+> **微软官方核心文档**  
+> - [Teams 开发者文档首页](https://learn.microsoft.com/microsoftteams/platform/)  
+> - [Microsoft 365 Agents Toolkit 文档](https://learn.microsoft.com/microsoftteams/platform/toolkit/overview-agents-toolkit)  
+> - [Copilot 扩展性文档](https://learn.microsoft.com/microsoft-365/copilot/extensibility/)  
+> - [Microsoft 365 Agents SDK 文档](https://learn.microsoft.com/microsoft-365/agents-sdk/)
+
 > Teams 应用 = M365 里"自定义 UI + 对话交互"的载体；Copilot 扩展（代理）是 2025 年后最热门的方向。两者共用同一套工具链：Microsoft 365 Agents Toolkit（原 Teams Toolkit）。
 
 ## 1. 一张图看懂扩展点
