@@ -2,9 +2,9 @@
 
 ## 项目概述
 
-- **目标**：从 D365 CRM 开发转型学习 M365 开发（Microsoft Graph、SPFx/SharePoint、Teams 应用/Copilot 扩展）
+- **目标**：从 D365 CRM 开发转型学习 M365 开发（Microsoft Graph、SPFx/SharePoint、Teams 应用/Copilot 扩展、Outlook 加载项）
 - **工作区结构**：
-  - `docs/` — 学习文档（00 路线图、01 Graph、02 Teams/Copilot、03 SPFx、04 环境搭建实录、05 资源清单）
+  - `docs/` — 学习文档（00 路线图、01 Graph、02 Teams/Copilot、03 SPFx、04 环境搭建实录、05 资源清单、06–09 集成、10–11 Outlook 加载项）
   - `spfx-hello/spfx-hello/` — SPFx 1.23.2 Minimal（无框架）示例项目（HelloWorld Web 部件）
   - `graph-demo/` — Microsoft Graph SDK 学习 demo（离线冒烟测试 + 真实调用脚本）
   - `my-first-agent/` — Agents Toolkit 声明式代理学习项目
@@ -205,3 +205,28 @@
   - §8.4 teams/ 目录（图标命名规则、尺寸要求、打包行为）
   - §8.5 package.json 脚本命令对照表（npm run start/build/clean/eject-webpack）
   - §8.6 构建产物目录关系图（src → lib → dist → .sppkg 的流转过程）
+
+### 2026-11-09（追加）· Outlook 客户信息侧边栏需求评估 + 新增方向六
+
+**需求**：Outlook 邮件中点击按钮，右侧任务窗格展示第三方 SaaS/ERP 客户页面；邮件收到新客户信息或在窗格输入新客户信息后，同步显示匹配客户或新建后的客户。范围限定 Outlook Web + 新版 Outlook。
+
+**结论**：可实现。按钮 + 任务窗格完全可行；读取邮件客户信息可行；窗格内嵌第三方页面有条件（X-Frame-Options / CSP frame-ancestors、第三方 Cookie 限制）。推荐 BFF + 自建窗格 UI，iframe 仅作厂商明确支持时的增强。
+
+**已落地**：
+- 新增 `docs/11-Outlook客户信息侧边栏方案评估.md`：可行性分项、方案对比、目标架构、交互与同步机制、风险、19 项信息清单、验收标准、实施阶段
+- 新增 `docs/10-Outlook加载项开发.md`：Office.js 对象模型、XML 清单示例、权限模型、SSO/NAA、BFF 与 iframe 限制、侧加载与调试、Integrated Apps 部署、常见坑
+- 更新 `docs/00-学习路线图.md`：新增方向六（4 个阶段）、节奏表第 7–8 周、文档导航
+- 更新 `docs/05-资源链接清单.md`：新增 Outlook / Office 加载项资源 8 条
+- 更新 `README.md`：五大方向、12 篇文档、规划中的 outlook-addin-demo、待办 3 条
+
+**关键技术点**：
+- 撰写模式没有正文变化事件，只能防抖轮询 `body.getAsync` 或手动刷新
+- `ItemChanged` 依赖宿主支持固定窗格（Web / 新版）
+- 撰写模式 `item.from` 为 null，应改用 `to` / `RecipientsChanged`
+- `X-Frame-Options: ALLOW-FROM` 已被 Chrome/Edge 忽略，嵌入必须用 CSP `frame-ancestors`
+- 默认 `ReadItem`；需要回写邮件才用 `ReadWriteItem`；避免 `ReadWriteMailbox`
+
+**待办（需 M365 租户）**：
+- [ ] `outlook-addin-demo` 创建 + 侧加载（Web / 新版 Outlook）
+- [ ] Entra 应用注册（SPA `brk-multihub://` 重定向 + Expose an API）+ NAA 联调
+- [ ] Integrated Apps 集中部署验证

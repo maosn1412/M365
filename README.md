@@ -1,6 +1,6 @@
 # M365 开发学习项目
 
-> 从 D365 CRM 开发转型学习 Microsoft 365 开发的完整实践项目——涵盖 Microsoft Graph、SPFx、Teams 应用、Copilot 扩展四大方向，每个方向配有学习文档 + 可运行的 Demo 代码。
+> 从 D365 CRM 开发转型学习 Microsoft 365 开发的完整实践项目——涵盖 Microsoft Graph、SPFx、Teams 应用、Copilot 扩展、Outlook 加载项五大方向，每个方向配有学习文档 + 可运行的 Demo 代码。
 
 ## 项目目标
 
@@ -16,7 +16,7 @@
 | 前端框架 | React 19、Fluent UI |
 | 构建工具 | Vite 6、tsup、Heft（SPFx） |
 | 服务端 | Node.js 22 + Express、.NET 10 |
-| SDK | Microsoft Graph SDK v5、@microsoft/teams-js v2、Azure.Identity |
+| SDK | Microsoft Graph SDK v5、@microsoft/teams-js v2、Office.js、MSAL.js、Azure.Identity |
 | 工具链 | Agents Toolkit CLI（atk）1.1.18、CLI for M365（m365）11.11.0 |
 | 包管理 | npm 10.x、NuGet |
 
@@ -24,8 +24,8 @@
 
 ```
 M365/
-├── docs/                           # 📚 学习文档（9 篇，从入门到集成）
-│   ├── 00-学习路线图.md             #    总览：D365→M365 知识映射 + 5 方向学习路径
+├── docs/                           # 📚 学习文档（12 篇，从入门到集成）
+│   ├── 00-学习路线图.md             #    总览：D365→M365 知识映射 + 6 方向学习路径
 │   ├── 01-Microsoft-Graph.md        #    Graph API 专题（认证、SDK、HAR 转代码）
 │   ├── 02-Teams应用与Copilot扩展.md #    Teams/Copilot 专题（含两个 Demo 详解）
 │   ├── 03-SPFx-SharePoint开发.md    #    SPFx 专题（Web 部件、扩展、Fluent UI）
@@ -34,7 +34,9 @@ M365/
 │   ├── 06-M365与D365集成概述.md     #    集成全景架构
 │   ├── 07-数据集成与同步.md         #    邮件/文档/日历/Teams 数据同步方案
 │   ├── 08-统一身份与认证.md         #    Entra ID 单点登录与跨系统认证
-│   └── 09-Power-Platform集成方案.md #    Power Automate/Apps/BI 做集成桥梁
+│   ├── 09-Power-Platform集成方案.md #    Power Automate/Apps/BI 做集成桥梁
+│   ├── 10-Outlook加载项开发.md      #    Outlook 加载项专题（Office.js/任务窗格/SSO）
+│   └── 11-Outlook客户信息侧边栏方案评估.md # 客户信息侧边栏需求评估与信息清单
 │
 ├── graph-demo/                     # 🟢 Microsoft Graph SDK 学习 Demo（Node.js）
 │   ├── offline-smoke-test.js       #    离线冒烟测试（6 项验证）
@@ -88,6 +90,7 @@ M365/
 | `my-first-agent` | Copilot 声明式代理 | 无代码（JSON + TXT 配置） | 是（需 Copilot 许可证） | ✅ 清单校验 All passed |
 | `teams-tab-app` | Teams Personal Tab | React 19 + Express + Vite | 是（需 M365 租户） | ✅ 构建通过 + 清单校验 All passed |
 | `spfx-hello` | SharePoint Web 部件 | SPFx 1.23.2（Heft + Minimal） | 是（需 SharePoint 租户） | ✅ 生产打包产出 .sppkg |
+| `outlook-addin-demo` | Outlook 任务窗格加载项 | Office.js + React + MSAL.js | 是（需 M365 租户） | 规划中（方向六阶段 2） |
 
 ## 快速开始
 
@@ -142,6 +145,10 @@ atk validate --env dev   # 清单校验（需先设置 TAB_ENDPOINT/TAB_DOMAIN�
 - [08-统一身份与认证.md](docs/08-统一身份与认证.md) — Entra ID 认证详解
 - [09-Power-Platform集成方案.md](docs/09-Power-Platform集成方案.md) — Power Platform 集成
 
+### Outlook 加载项
+- [10-Outlook加载项开发.md](docs/10-Outlook加载项开发.md) — Office.js、任务窗格、SSO/NAA、部署
+- [11-Outlook客户信息侧边栏方案评估.md](docs/11-Outlook客户信息侧边栏方案评估.md) — 需求评估、架构与信息清单
+
 ### 工具与环境
 - [00-学习路线图.md](docs/00-学习路线图.md) — D365→M365 知识映射 + 学习路径
 - [04-开发环境搭建手册.md](docs/04-开发环境搭建手册.md) — 本机环境实录
@@ -159,6 +166,9 @@ atk validate --env dev   # 清单校验（需先设置 TAB_ENDPOINT/TAB_DOMAIN�
 - [ ] `my-first-agent` 在 Copilot 中实际对话测试
 - [ ] `teams-tab-app` F5 本地调试 + Teams 中侧载测试
 - [ ] `teams-tab-app` Azure 远程 provision + deploy
+- [ ] `outlook-addin-demo` 创建 + 侧加载（Outlook Web / 新版 Outlook）
+- [ ] Outlook 加载项 Entra 应用注册（SPA `brk-multihub://` 重定向 + Expose an API）+ NAA 联调
+- [ ] Outlook 加载项 Integrated Apps 集中部署验证
 
 ## 许可证
 
