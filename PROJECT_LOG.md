@@ -185,6 +185,16 @@
 - `docs/02-Teams应用与Copilot扩展.md`：新增第 6~10 章，包含两个 demo 项目索引、my-first-agent 结构详解（§7）、teams-tab-app 结构详解（§8）、两者架构对比（§9）、官方资源（§10）
 - `docs/04-开发环境搭建手册.md`：新增第 5a 节「Teams Tab 应用本地测试记录」，含生成/构建/校验全流程表格、技术栈说明、与 my-first-agent 对比表；待办新增 2 条（F5 调试 + Azure 远程部署）
 
+### 2026-11-09 · 为三篇专题文档添加官方核心文档链接
+
+**变更内容**：
+- `docs/01-Microsoft-Graph.md`：一级标题下方添加 Microsoft Graph 文档首页、Graph REST API v1.0 参考、MS Learn 学习路径 3 条官方链接
+- `docs/02-Teams应用与Copilot扩展.md`：添加 Teams 开发者文档、Agents Toolkit 文档、Copilot 扩展性文档、Agents SDK 文档 4 条官方链接
+- `docs/03-SPFx-SharePoint开发.md`：添加 SPFx 文档首页、SPFx 入门环境搭建、版本兼容性矩阵、PnP 样例库 4 条官方链接
+- 所有链接均来自 `learn.microsoft.com` 或 `adoption.microsoft.com`，与文档末尾「官方资源」章节中的链接一致，真实有效
+
+---
+
 ### 2026-11-05 · SPFx 文档补充 demo 项目文件结构详解
 
 **变更内容**：

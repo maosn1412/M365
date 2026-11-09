@@ -1,5 +1,10 @@
 # 01 · Microsoft Graph 专题
 
+> **微软官方核心文档**  
+> - [Microsoft Graph 文档首页](https://learn.microsoft.com/graph/)  
+> - [Graph REST API v1.0 参考](https://learn.microsoft.com/graph/api/overview)  
+> - [MS Learn：Microsoft Graph 学习路径](https://learn.microsoft.com/training/paths/m365-msgraph-fundamentals/)
+
 > Graph 是 M365 开发的"地基 API"——相当于 Dataverse Web API 之于 D365。先学它，后面 SPFx、Teams、Copilot 扩展都会用到。
 
 ## 1. 是什么

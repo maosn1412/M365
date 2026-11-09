@@ -1,5 +1,11 @@
 # 03 · SPFx / SharePoint 开发专题
 
+> **微软官方核心文档**  
+> - [SharePoint Framework 文档首页](https://learn.microsoft.com/sharepoint/dev/spfx/sharepoint-framework-overview)  
+> - [SPFx 入门环境搭建](https://learn.microsoft.com/sharepoint/dev/spfx/set-up-your-development-environment)  
+> - [SPFx 版本兼容性矩阵](https://learn.microsoft.com/sharepoint/dev/spfx/compatibility)  
+> - [PnP 样例库](https://adoption.microsoft.com/sample-solution-gallery/)
+
 > SPFx（SharePoint Framework）是 SharePoint Online 的官方前端扩展模型。你的 PCF/React 经验直接可用。
 > ⚠️ 重大变化：**SPFx 1.22 起引入 Heft 构建链，1.23（2026-05-13 发布）起新项目只支持 Heft**，网上旧教程里的 `gulp serve` 命令已过时，以本文为准。
 > 最后更新：2026-10-27
